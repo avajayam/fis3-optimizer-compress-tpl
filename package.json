@@ -1,0 +1,25 @@
+{
+  "name": "fis3-optimizer-compress-tpl",
+  "version": "0.1.0",
+  "description": "compress code for php template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avajayam/fis3-optimizer-compress-tpl.git"
+  },
+  "keywords": [
+    "fis3",
+    "php",
+    "template",
+    "compress"
+  ],
+  "author": "Caixiaoxing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avajayam/fis3-optimizer-compress-tpl/issues"
+  },
+  "homepage": "https://github.com/avajayam/fis3-optimizer-compress-tpl#readme"
+}
