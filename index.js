@@ -53,8 +53,8 @@ module.exports = function(content, file, settings) {
 			}
 		});
 
-		////   /* */注释
-		content = content.replace(/\/\*(?:.|\s)*?\*\//g, '');
+		////   /* */注释，字符串中的除外，比如"*/*"
+		content = content.replace(/(\r|\n)(\s)*\/\*(?:.|\s)*?\*\//g, '');
 
 		////   <!-- -->注释
 		content = content.replace(/<\!--(?:.|\s)*?-->/g, '');
