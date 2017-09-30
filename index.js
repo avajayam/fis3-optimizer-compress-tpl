@@ -12,9 +12,24 @@ module.exports = function(content, file, settings) {
 	var _indexStart = -1;
 	var _indexEnd = -1;
 
-	while (content !== '') {
-		content = split(content);
+	// 如果压缩超过100000，输出异常
+	var _start = Date.now();
+	var _st = setTimeout(function() {
+		fis.log.warn('文件 ' + file.fullname + ' 压缩超时')
+	}, 10000)
+
+
+	try {
+		while (content !== '') {
+			content = split(content)
+		}
+	} catch (exp) {
+		fis.log.error('文件 ' + file.fullname + ' 压缩错误')
 	}
+
+
+	clearTimeout(_st);
+
 
 	return newContent;
 
@@ -60,7 +75,7 @@ module.exports = function(content, file, settings) {
 		content = content.replace(/<\!--(?:.|\s)*?-->/g, '');
 
 		////   //注释
-		content = content.replace(/(\r|\n|;|,)(\s)*\/\/.*?(?=\r|\n)/g, function($0, $1) {
+		content = content.replace(/(\r|\n|\s|;|,)(\s)*\/\/.*?(?=\r|\n)/g, function($0, $1) {
 			if ($1 == ';' || $1 == ',') {
 				return $1
 			} else {

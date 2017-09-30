@@ -1,6 +1,6 @@
 {
   "name": "fis3-optimizer-compress-tpl",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "compress code for php template",
   "main": "index.js",
   "scripts": {
