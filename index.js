@@ -44,7 +44,8 @@ module.exports = function(content, file, settings) {
 			_indexEnd = content.indexOf('?>');
 			if (_indexEnd !== -1) {
 				newContent += content.substring(0, _indexEnd + 2);
-				return content.substr(_indexEnd + 2)
+				content = content.substr(_indexEnd + 2)
+				return content
 			} else {
 				newContent += content;
 				return ''
@@ -84,7 +85,7 @@ module.exports = function(content, file, settings) {
 		});
 
 		////   连续换行符
-		content = content.replace(/(\r|\n)(\t| )*?(\r|\n)/g, '$1');
+		content = content.replace(/(\r|\n|\t|\s)*(\r|\n)/g, '\n');
 
 		////   连续制表和空格符
 		content = content.replace(/(\t| )+/g, ' ');
